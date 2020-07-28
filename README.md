@@ -8,8 +8,10 @@ After creating your repo, you can hack the project in your own way. I recommend 
 
 ## Scripts
 
-- `npm start`: start the project in watch mode
+- `npm run dev`: start the project in watch mode
 - `npm build`: build the project
 - `npm lint`: lint all files
+
+Note: executing the project from inside VSCode will automatically attach the debugger for node. Thus, you can use the breakpoints to help debugging your code.
 
 Happy hacking =)

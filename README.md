@@ -1,4 +1,4 @@
-# node-ts-lib
+# node-server-ts
 
 ## Getting started
 
@@ -11,6 +11,5 @@ After creating your repo, you can hack the project in your own way. I recommend 
 - `npm start`: start the project in watch mode
 - `npm build`: build the project
 - `npm lint`: lint all files
-
 
 Happy hacking =)

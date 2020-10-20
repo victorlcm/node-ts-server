@@ -7,9 +7,11 @@ COPY package*.json ./
 
 COPY tsconfig*.json ./
 
+RUN npm ci
+
 COPY ./src ./src
 
-RUN npm ci && npm run build
+RUN npm run build
 
 # Production stage.
 FROM node:12-slim

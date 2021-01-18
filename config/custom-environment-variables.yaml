@@ -1,0 +1,2 @@
+test:
+  testEnvVariable: FROM_OS_ENV_VARIABLE_NAME

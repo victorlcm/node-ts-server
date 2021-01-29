@@ -19,6 +19,7 @@ FROM node:fermium-slim
 WORKDIR /app
 ENV NODE_ENV=production
 
+COPY config ./config
 COPY package*.json ./
 RUN npm ci --quiet --only=production
 

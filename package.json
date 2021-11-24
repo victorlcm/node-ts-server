@@ -26,7 +26,7 @@
   "author": "victorlcm",
   "license": "MIT",
   "devDependencies": {
-    "@types/config": "0.0.39",
+    "@types/config": "0.0.40",
     "@types/jest": "27.0.3",
     "@types/node": "16.11.10",
     "@typescript-eslint/eslint-plugin": "5.4.0",

@@ -8,7 +8,7 @@ http
   })
   .listen(9090);
 
-console.log('Server started on port 9090, Happy Hacking!');
+console.log('Server started on port 9090, Happy Hacking1');
 
 console.log(`Default variable: ${config.get('test.defaultVariableThatCanBeOverriden')}`);
 

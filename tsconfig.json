@@ -15,8 +15,12 @@
     "allowSyntheticDefaultImports": true,
     "strictNullChecks": false,
     "resolveJsonModule": true,
+    "incremental": true,
     "baseUrl": ".",
-    "lib": ["esnext"]
+    "lib": ["esnext"],
+    "paths": {
+      "@src/*": ["./src/*"]
+    },
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

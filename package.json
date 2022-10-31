@@ -49,6 +49,6 @@
   "dependencies": {
     "config": "3.3.8",
     "js-yaml": "4.1.0",
-    "tslib": "2.4.0"
+    "tslib": "2.4.1"
   }
 }

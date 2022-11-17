@@ -1,5 +1,5 @@
 # Builder stage.
-FROM node:fermium AS builder
+FROM node:hydrogen AS builder
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ COPY ./src ./src
 RUN npm run build
 
 # Production stage.
-FROM node:fermium-slim
+FROM node:hydrogen-slim
 
 WORKDIR /app
 ENV NODE_ENV=production

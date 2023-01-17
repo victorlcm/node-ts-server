@@ -5,6 +5,8 @@
     "declaration": true,
     "outDir": "dist",
     "sourceMap": true,
+    "inlineSources": true,
+    "sourceRoot": "/",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strict": true,

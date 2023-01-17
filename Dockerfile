@@ -1,13 +1,20 @@
 # Builder stage.
-FROM node:hydrogen AS builder
+FROM node:hydrogen-alpine AS builder
 
 WORKDIR /app
 
-COPY package*.json ./
+RUN apk add --no-cache libc6-compat
+
+COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 
 COPY tsconfig*.json ./
 
-RUN npm ci
+RUN \
+  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+  elif [ -f package-lock.json ]; then npm ci; \
+  elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i --frozen-lockfile; \
+  else echo "Lockfile not found." && exit 1; \
+  fi
 
 COPY ./src ./src
 

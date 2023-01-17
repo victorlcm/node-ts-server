@@ -21,14 +21,20 @@ COPY ./src ./src
 RUN npm run build
 
 # Production stage.
-FROM node:hydrogen-slim
+FROM node:hydrogen-alpine
 
 WORKDIR /app
 ENV NODE_ENV=production
 
 COPY config ./config
-COPY package*.json ./
-RUN npm ci --quiet --only=production
+COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+
+RUN \
+  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+  elif [ -f package-lock.json ]; then npm ci --omit=dev; \
+  elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i --frozen-lockfile; \
+  else echo "Lockfile not found." && exit 1; \
+  fi
 
 ## Copy just dist from builder
 COPY --from=builder /app/dist ./dist

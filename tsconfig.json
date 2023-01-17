@@ -15,7 +15,7 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "resolveJsonModule": true,
     "incremental": true,
     "baseUrl": ".",
@@ -25,5 +25,5 @@
     },
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }

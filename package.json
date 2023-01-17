@@ -10,7 +10,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "tsc --build ./tsconfig.json && tsc-alias",
+    "build": "tsc --build ./tsconfig.build.json && tsc-alias",
     "prebuild": "rimraf dist",
     "dev": "nodemon",
     "start": "node dist/index.js",
